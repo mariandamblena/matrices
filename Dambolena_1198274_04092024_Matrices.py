@@ -66,7 +66,6 @@ def jugarTesoroEscondido():
         else:
             print("Inténtalo de nuevo.")
 
-# Iniciar el juego
 if __name__ == "__main__":
     jugarTesoroEscondido()
 
