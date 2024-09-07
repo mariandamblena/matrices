@@ -44,6 +44,21 @@ def mayorProduccion(matriz):
 
     print(f" La fábrica {fabrica}: tiene el maximo en ventas de bicicletas: {maximo} el dia {dia}")
 
+def diaMasProductivo(matriz):
+    dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes","Sabado"]  # Solo 5 días
+    produccionPorDia = [0] * len(dias)  # Inicializar una lista de 0 para cada día
+
+    # Sumar la producción de todas las fábricas para cada día
+    for fila in matriz:
+        for columna in range(len(dias)):  # Recorremos los 5 días
+            produccionPorDia[columna] += fila[columna]  # Sumar producción por día
+
+    # Encontrar el día con la mayor producción
+    maxProduccion = max(produccionPorDia)
+    diaMasProductivo = dias[produccionPorDia.index(maxProduccion)]
+
+    print(f"El día más productivo es {diaMasProductivo} con {maxProduccion} unidades.")
+
 # Crear y mostrar la matriz
 n = 6  # Número de fábricas
 matriz = cargarMatriz(n)
@@ -56,3 +71,6 @@ produccionPorFabrica(matriz)
 
 #
 mayorProduccion(matriz)
+
+#dia mas productivo
+diaMasProductivo(matriz=matriz)
