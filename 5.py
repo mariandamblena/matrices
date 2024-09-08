@@ -100,4 +100,12 @@ mostrar_butacas(sala)
 
 # Mostrar cuántas butacas libres hay en total
 libres = butacas_libres(sala)
-print(f"Hay {libres} butacas libres")
+print(f"Hay {libres} butacas libres en total.")
+
+# Mostrar la secuencia más larga de butacas libres contiguas
+inicio, max_contiguas = butacas_contiguas(sala)
+if max_contiguas > 0:
+    print(f"La secuencia más larga de butacas contiguas libres está en la fila {inicio[0]} "
+          f"comenzando en la butaca {inicio[1]} y tiene {max_contiguas} butacas.")
+else:
+    print("No hay butacas contiguas libres.")
